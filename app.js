@@ -6,6 +6,7 @@ var bigfile = require('./app/bigfile');
 var fs = require('fs');
 var help = require('./app/help')
 var zipFile = require('./app/zipFile.js');
+var csvParse = require('./app/csvParse.js');
 
 if (argv.help) {
 	help();
@@ -13,6 +14,10 @@ if (argv.help) {
 
 if (argv.file) {
 	zipFile(argv.file)
+}
+
+if (argv.csv) {
+	csvParse(argv.csv);
 }
 
 

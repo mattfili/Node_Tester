@@ -2,7 +2,7 @@ var fs = require('fs');
 
 module.exports = function () {
 	printHelpMessage();
-  process.exit(1)
+  	process.exit(1)
 };
 
 function printHelpMessage() {
