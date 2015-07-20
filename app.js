@@ -2,6 +2,8 @@
 
 var argv = require('yargs').argv
 var prompt = require('prompt');
+var bigfile = require('./app/bigfile');
+var fs = require('fs');
 
 var help = require('./app/help')
 
@@ -20,9 +22,11 @@ prompt.get('name', function (err, result) {
 
 
 function printHelloMessage(name) {
-console.log('hello ' + name);
-process.stdout.write('hello   ' + name);
-
+	console.log('hello ' + name);
+	var options = {encoding: 'utf8'}
+	var message = fs.readFileSync('./app/bigfile', options)
+	console.log(message)
+	process.stdout.write('hello   ' + name + 'Again\n');
 }
 
 
