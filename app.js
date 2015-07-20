@@ -4,11 +4,15 @@ var argv = require('yargs').argv
 var prompt = require('prompt');
 var bigfile = require('./app/bigfile');
 var fs = require('fs');
-
 var help = require('./app/help')
+var zipFile = require('./app/zipFile.js');
 
 if (argv.help) {
 	help();
+}
+
+if (argv.file) {
+	zipFile(argv.file)
 }
 
 
@@ -23,9 +27,11 @@ prompt.get('name', function (err, result) {
 
 function printHelloMessage(name) {
 	console.log('hello ' + name);
-	var options = {encoding: 'utf8'}
-	var message = fs.readFileSync('./app/bigfile', options)
-	console.log(message)
+	// READ OUT BIGFILE CONTENTS FASTER
+	// var options = {encoding: 'utf8'} 
+	// var message = fs.createReadStream('./app/bigfile', options)
+	// message.pipe(process.stdout)
+	// console.log(message)
 	process.stdout.write('hello   ' + name + 'Again\n');
 }
 

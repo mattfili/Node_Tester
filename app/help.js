@@ -6,8 +6,8 @@ module.exports = function () {
 };
 
 function printHelpMessage() {
-  var options = {encoding: 'utf8'}
-  var message = fs.readFileSync('./app/helpmessage.txt', options)
-  console.log(message)
+  var options = {encoding: 'utf8'};
+  var message = fs.readFileSync('./app/helpmessage.txt', options);
+  console.log(message);
 
 };
